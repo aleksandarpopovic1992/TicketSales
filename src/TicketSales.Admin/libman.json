@@ -2,13 +2,6 @@
   "version": "1.0",
   "defaultProvider": "cdnjs",
   "libraries": [
-    {
-      "library": "twitter-bootstrap@4.4.1",
-      "destination": "wwwroot/lib/twitter-bootstrap/"
-    },
-    {
-      "library": "bootstrap-datepicker@1.9.0",
-      "destination": "wwwroot/lib/bootstrap-datepicker/"
-    }
+ 
   ]
 }

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TicketSales.User.Models.TicketViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tickets bought by user</h1>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Concert id</th>
+            <th>Concert title</th>
+            <th>Tickets bought by user</th>
+        </tr>
+
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.ConcertId</td>
+                <td>@ticket.ConcertTitle</td>
+                <td>@ticket.NumberOfTickets</td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+
+
+

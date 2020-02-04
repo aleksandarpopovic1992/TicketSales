@@ -1,0 +1,28 @@
+﻿
+@model TicketSales.Admin.Models.CreateConcertViewModel
+
+
+@{
+    ViewData["Title"] = "Create Concert";
+}
+
+<h1>Create concert</h1>
+
+
+<form method="post" asp-controller="Concert" asp-action="Create">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" name="title">
+        @Html.ValidationMessageFor(x => x.Title)
+    </div>
+    <div class="form-group">
+        <label for="place">Place:</label>
+        <input type="text" class="form-control" id="place" name="place">
+    </div>
+    <div class="form-group">
+        <label for="numberoftickets">Number of tickets:</label>
+        <input type="text" class="form-control" id="numberoftickets" name="numberoftickets">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

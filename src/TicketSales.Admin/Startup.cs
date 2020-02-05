@@ -52,7 +52,7 @@ namespace TicketSales.Admin
 
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
-                    var host = cfg.Host("localhost", "tickets", h => { h.Username("guest"); h.Password("guest"); });
+                    var host = cfg.Host("localhost", "aleksandar", h => { h.Username("guest"); h.Password("guest"); });
 
                     cfg.ReceiveEndpoint(host, "admin", e =>
                     {
@@ -62,8 +62,8 @@ namespace TicketSales.Admin
                         e.Consumer<ConcertCreatedEventHandler>(provider);
                         e.Consumer<ConcertTicketsBoughtEventHandler>(provider);
 
-                        EndpointConvention.Map<TestCommand>(new Uri("rabbitmq://localhost/tickets/core"));
-                        EndpointConvention.Map<CreateConcertCommand>(new Uri("rabbitmq://localhost/tickets/core"));
+                        EndpointConvention.Map<TestCommand>(new Uri("rabbitmq://localhost/aleksandar/core"));
+                        EndpointConvention.Map<CreateConcertCommand>(new Uri("rabbitmq://localhost/aleksandar/core"));
                     });
 
                     // or, configure the endpoints by convention
